@@ -100,12 +100,7 @@ $display("[SCB] SKIP : Read transaction");
 endtask
 
 task check_pstrb();
-//expected_wdata='0;
 if(ip_trans.write_read) begin
-//for(int i=0;i<`PSTRB_WIDTH;i++) begin
-//if(ip_trans.strb_in[i])
-//expected_wdata[i*8+:8]=ip_trans.wdata_in[i*8+:8];
-//end
 if(op_trans.PSTRB==ip_trans.strb_in) begin
 $display("[SCB] PASS : PSTRB matched");
 pass_count++;
@@ -114,14 +109,6 @@ else begin
 $display("[SCB] FAIL : PSTRB mismatch");
 fail_count++;
 end
-/*if(op_trans.PWDATA==expected_wdata) begin
-$display("[SCB] PASS : Masked PWDATA matched");
-pass_count++;
-end
-else begin
-$display("[SCB] FAIL : Masked PWDATA mismatch");
-fail_count++;
-end*/
 end
 else
 $display("[SCB] SKIP : Read transaction");
@@ -199,4 +186,3 @@ $display("========================================\n");
 endtask
 
 endclass
-
