@@ -9,7 +9,7 @@ endfunction
 
 task start();
 
-for(int i=0; i< `num_transactions; i++) begin
+for(int i=0; i< `num_transaction; i++) begin
 assert(apb_trans.randomize());
 mbx_gen.put(apb_trans.copy());
 
