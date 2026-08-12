@@ -1,16 +1,14 @@
 `include "defines.sv"
 class apb_environment;
-//declareing all the virtuall interface
+
 virtual apb_interface drv_vif;
 virtual apb_interface ip_mon_vif;
 virtual apb_interface op_mon_vif;
 
-//declaring all mailbox
 mailbox #(apb_transaction)mbx_gd;
 mailbox #(apb_transaction)mbx_ims;
 mailbox #(apb_transaction)mbx_oms;
 
-//environment component declared
 
 apb_generator gen;
 apb_driver drv;
