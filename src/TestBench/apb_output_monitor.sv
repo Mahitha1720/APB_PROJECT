@@ -18,6 +18,7 @@ covergroup apb_state_cg @(mvif.op_mon_cb);
         bins setup_access =(2'b10 => 2'b11);
         bins access_idle =(2'b11 =>2'b00);
         bins complete_transfer =(2'b00 => 2'b10 => 2'b11 =>2'b00);
+        bins access_setup = (2'b11 => 2'b10);
     }
 
 endgroup
